@@ -2,6 +2,11 @@
 include 'service/service.php';
 session_start();
 
+if (!isset($_SESSION['is_login']) || $_SESSION['role'] !== 'admin') {
+    header("Location: index.php");
+    exit();
+}
+
 if (isset($_SESSION['kasir'])) {
     header("Location: kasir.php");
     exit();

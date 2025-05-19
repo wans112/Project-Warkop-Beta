@@ -1,17 +1,17 @@
 <?php
-    include 'service/service.php';
-    session_start();
+include 'service/service.php';
+session_start();
 
-    if (isset($_SESSION['admin'])) {
-        header("Location: atmin.php");
-        exit();
-    }
+if (isset($_SESSION['admin'])) {
+    header("Location: atmin.php");
+    exit();
+}
 
-    if (isset($_POST['logout'])) {
-        session_unset();
-        session_destroy();
-        header("Location: index.php");
-    }
+if (isset($_POST['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: index.php");
+}
 ?>
 
 <!DOCTYPE html>
